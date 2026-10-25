@@ -1,0 +1,83 @@
+@startuml
+
+class Cliente {
+  - String numero
+  + String toString()
+  + String getNumero()
+  + void setNumero(String)
+}
+
+class Main {
+  + {static} void main(String[])
+}
+
+class Lugar {
+  - char fila
+  - int numero
+  + String toString()
+  + char getFila()
+  + void setFila(char)
+  + int getNumero()
+  + void setNumero(int)
+}
+
+class Reserva {
+  - int id
+  - Cliente cliente
+  - Sessao sessao
+  - List<Lugar> lugares
+  + String toString()
+  + void adicionarLugar(Lugar)
+  + int getId()
+  + void setId(int)
+  + Cliente getCliente()
+  + void setCliente(Cliente)
+  + Sessao getSessao()
+  + void setSessao(Sessao)
+  + List<Lugar> getLugares()
+}
+
+class Sala {
+  - int numero
+  - List<Lugar> lugares
+  + String toString()
+  + void adicionarLugar(char, int)
+  + int getNumero()
+  + void setNumero(int)
+  + List<Lugar> getLugares()
+}
+
+class Sessao {
+  - String nomeFilme
+  - LocalDateTime dataHora
+  - Sala sala
+  + String toString()
+  + String getNomeFilme()
+  + void setNomeFilme(String)
+  + LocalDateTime getDataHora()
+  + void setDataHora(LocalDateTime)
+  + Sala getSala()
+  + void setSala(Sala)
+}
+
+' --------------------
+' CONEXÕES E RELAÇÕES
+' --------------------
+
+
+' 1. Composição Forte: Sala contem 0..* Lugares
+Sala "1" *-- "0..*" Lugar : contem
+
+' 2. Sessao ocorre em 1 Sala
+Sessao "1" --> "1" Sala : ocorre
+
+' 3. Reserva pertence a 1 Sessao
+Reserva "1" --> "1" Sessao : pertence a
+
+' 4. Reserva realizada por 1 Cliente
+Reserva "1" --> "1" Cliente : realizada por
+
+' 5. Reserva referencia 0..* Lugares
+Reserva "1" --> "0..*" Lugar : reserva
+
+@enduml
