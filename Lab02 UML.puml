@@ -66,18 +66,18 @@ class Sessao {
 
 
 ' 1. Composição Forte: Sala contem 0..* Lugares
-Sala "1" *-- "0..*" Lugar : contem
+Sala "1   " *-- "0..*" Lugar : contem
 
 ' 2. Sessao ocorre em 1 Sala
 Sessao "1" --> "1" Sala : ocorre
 
 ' 3. Reserva pertence a 1 Sessao
-Reserva "1" --> "1" Sessao : pertence a
+Reserva "1" --> "1   " Sessao : pertence a
 
 ' 4. Reserva realizada por 1 Cliente
-Reserva "1" --> "1" Cliente : realizada por
+Reserva "1   " --> "1  " Cliente : realizada por
 
 ' 5. Reserva referencia 0..* Lugares
-Reserva "1" --> "0..*" Lugar : reserva
+Reserva "1" --> "0..* " Lugar : reserva
 
 @enduml
