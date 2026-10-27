@@ -3,7 +3,7 @@ public class Lugar {
     int numero;
 
     public Lugar(char fila, int numero) {
-        this.fila = fila;
+        this.fila = Character.toUpperCase(fila);
         this.numero = numero;
     }
 

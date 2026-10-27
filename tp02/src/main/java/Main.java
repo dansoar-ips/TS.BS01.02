@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Main {
@@ -38,8 +37,6 @@ public class Main {
         System.out.println("Detalhes das reservas: ");
         System.out.println(r1);
         System.out.println(r2);
-
-
     }
 
 
