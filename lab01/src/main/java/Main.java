@@ -14,7 +14,7 @@ public class Main {
             new Lugar('A', 2),
             new Lugar('A', 3)
         );
-
+        
         // 3. Validação 1: Verificar se os lugares são adjacentes
         boolean saoAdjacentes = ValidadorReserva.saoAdjacentes(lugaresPretendidos);
         

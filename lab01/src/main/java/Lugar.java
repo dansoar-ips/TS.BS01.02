@@ -13,9 +13,7 @@ public class Lugar {
         return fila;
     }
 
-    public int getNumero() {
-        return numero;
-    }
+    public int getNumero() {return numero;}
 
     @Override
     public boolean equals(Object o) {
@@ -24,6 +22,8 @@ public class Lugar {
         Lugar lugar = (Lugar) o;
         return fila == lugar.fila && numero == lugar.numero;
     }
+
+
 
     @Override
     public int hashCode() {
